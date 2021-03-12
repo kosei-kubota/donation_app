@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'donations/index'
   devise_for :users
   root 'donations#index'
+  resources :users, only: [:show, :update]
 end
