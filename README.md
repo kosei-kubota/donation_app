@@ -1,24 +1,49 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column               | Type       | Options                        |
+| -------------------- | ---------- | ------------------------------ |
+| nickname             | string     | null: false                    |
+| email                | string     | null: false, unique: true      |
+| encrypted_password   | string     | null: false                    |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :donations
+- has_many :orders
+- has_one :card
 
-* Configuration
+##  donations テーブル
 
-* Database creation
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| type         | string     | null: false                    |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_one :order
 
-* Services (job queues, cache servers, search engines, etc.)
+## cards テーブル
 
-* Deployment instructions
+| Column           | Type       | Options     |
+| ---------------- | ---------- | ----------- |
+| card_token       | string     | null: false |
+| customer_token   | integer    | null: false |
+| user             | string     | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :user
+
+## orders テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user             | references | null: false, foreign_key: true |
+| donation         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :donation
