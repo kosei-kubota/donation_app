@@ -8,5 +8,11 @@ class CardsController < ApplicationController
     description: 'test',
     card: params[:card_token]
     )
+
+    card = Card.new(
+      card_token: params[:card_token],
+      customer_token: customer.id,
+      user_id: current_user.id
+    )
   end
 end
