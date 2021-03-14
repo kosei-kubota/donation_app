@@ -3,7 +3,7 @@
 <div class="content">
   <% @donations.each do |donation| %> 
     <p>寄付の内容：<%= donation.name %></p>
-    <%= link_to '寄付をする'%>
+    <%= link_to '寄付をする', order_donation_path(donation.id), method: :post %>
   <% end %>
 </div>
 <%# /寄付一覧 %>
