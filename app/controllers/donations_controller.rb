@@ -6,11 +6,12 @@ class DonationsController < ApplicationController
   end
 
   def order
+    redirect_to new_card_path and return unless current_user.card.present?
   end
 
   private
   def find_donation
     @donation = Donation.find(params[:id])
   end
-  
+
 end
