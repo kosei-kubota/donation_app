@@ -1,7 +1,9 @@
 <%= link_to 'マイページへ行く', user_path(current_user) %>
+<%# 寄付一覧 %>
 <div class="content">
   <% @donations.each do |donation| %> 
     <p>寄付の内容：<%= donation.name %></p>
     <%= link_to '寄付をする'%>
   <% end %>
 </div>
+<%# /寄付一覧 %>
