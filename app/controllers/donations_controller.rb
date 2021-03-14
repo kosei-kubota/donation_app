@@ -15,6 +15,8 @@ class DonationsController < ApplicationController
       customer: customer_token,
       currency: 'jpy'
       )
+
+    DonationOrder.create(donation_id: params[:id])
   end
 
   private
