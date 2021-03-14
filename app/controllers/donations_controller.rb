@@ -17,6 +17,8 @@ class DonationsController < ApplicationController
       )
 
     DonationOrder.create(donation_id: params[:id])
+
+    redirect_to root_path
   end
 
   private
