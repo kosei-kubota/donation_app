@@ -1,3 +1,3 @@
 class Donation < ApplicationRecord
-  has_one :donation_order
+  has_one :order
 end

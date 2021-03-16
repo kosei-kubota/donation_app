@@ -1,1 +1,12 @@
-<p>寄付ページ</p>
+<%= form_with model:@price, url: donations_path(@price.id), local: true do |f| %>
+  <h1>寄付金額設定</h1>
+  <div class="field">
+    <%= f.label :price, "金額（¥1~1,000,000）" %>
+    <%= "¥" %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "次へ" %>
+  </div>
+<% end %>
