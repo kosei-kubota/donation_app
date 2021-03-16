@@ -5,6 +5,11 @@
     <p>寄付の内容：<%= donation.name %></p>
     <p>寄付金：<%= donation.price %>円</p>
     <%= link_to '寄付をする', order_donation_path(donation.id), method: :post %>
+    <% if donation.order != nil %> 
+      <div class='donation-out'>
+        <b>寄付されました。ありがとうございます！！</b>
+      </div>
+    <% end %>
   <% end %>
 </div>
 <%# /寄付一覧 %>
