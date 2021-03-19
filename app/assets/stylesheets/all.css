@@ -1,13 +1,132 @@
+/* 一覧表示 */
 .AccountPage__title{
   margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
+.new-donation-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.donation-btn {
+  padding: 8px 10px;
+  font-size: 15px;
+  background: #57C3E9;
+  border: 2px solid #57C3E9;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.title {
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.top-title {
+  color: red;
+}
+
+.btn-line {
+  text-decoration: none;
+}
+
+.btn {
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.donations-btn {
+  padding: 8px 10px;
+  font-size: 15px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.user-name {
+  display: flex;
+  justify-content: center;
+}
+
+/* /一覧表示 */
+.pict {
+  display: flex;
+  justify-content: center;
+}
+
+.list-pict {
+  margin-bottom: 20px;
+  width: 90%;
+  height: 500px;
+}
+
+.devise-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.registration-main {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
 .content{
   margin-top: 60px;
+  
 }
 
-.sold-out{
+.donation-list {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.donation-name {
+  font-weight: bold;
+}
+
+.donation-out{
   margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  color: #ea352d;
+}
+
+.donation-in {
+  display: flex;
+  justify-content: center;
 }
 
 .order{
@@ -19,8 +138,22 @@
   margin-bottom: 60px;
 } */
 
-.Card_info{
-  margin-bottom: 60px;
+/* カード登録 */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Cardpage {
+  display: flex;
+  justify-content: center;
+}
+
+.card-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-form{
@@ -46,6 +179,7 @@
 
 .input-expiration-date-wrap{
   display: flex;
+  justify-content: center;
 }
  
  
@@ -54,4 +188,128 @@
   height: 30px;
   width: 100px;
  }
+/* /カード登録 */
 
+/* 寄付投稿 */
+.new-donation {
+  display: flex;
+  justify-content: center;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.new-sell-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.new2-sell-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.sell-btn {
+  width: 20%;
+}
+
+.donation-text {
+  width: 40%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.sell-yen {
+  display: flex;
+  align-items: center;
+  font-size: 23px;
+}
+/* /寄付投稿 */
+
+/* ヘッダー部分 */
+/* .header__bar {
+  background-color: cyan;
+} */
+
+.grid-6 {
+  color: orange;
+  display: flex;
+  justify-content: center;
+}
+/* //ヘッダー部分 */
+
+/* フッター部分 */
+.footer {
+  display: flex;
+  justify-content: center;
+}
+/* //フッター部分 */
+
+/* マイページ */
+.purchase-btn {
+  width: 120px;
+  background: #fff;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.purchase-btn-text {
+  color: black;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon {
+  width: 60%;
+}
+
+.Card__title {
+  display: flex;
+  justify-content: center;
+}
+
+.Card_info{
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.Account__info {
+  display: flex;
+  justify-content: center;
+}
+
+.AccountPage__form {
+  display: flex;
+  justify-content: center;
+
+}
+
+.Outpage__form {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.Rootpage__form {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+/* //マイページ */

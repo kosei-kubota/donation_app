@@ -1,12 +1,52 @@
-<%= form_with model:@price, url: donations_path(@price.id), local: true do |f| %>
-  <h1>寄付金額設定</h1>
-  <div class="field">
-    <%= f.label :price, "金額（¥1~1,000,000）" %>
-    <%= "¥" %>
-    <%= f.text_field :price %>
-  </div>
+<div class="donation-sell-main">
+  <h2 class="AccountPage__title">寄付の情報を入力</h2>
+  <%= form_with(model: @donation, local: true) do |f| %>
 
-  <div class="actions">
-    <%= f.submit "次へ" %>
-  </div>
-<% end %>
+    <%# <%= render 'devise/shared/error_messages', model: f.object %>
+
+    <%# 商品名と商品説明 %>
+    <div class="new-donation">
+      寄付名
+      <span class="indispensable">必須</span>
+    </div><br>
+    <div class="AccountPage__form">
+      <%= f.text_area :name, class:"donation-text", id:"donation-name", placeholder:"寄付名（必須 40文字まで)", maxlength:"40" %>
+    </div><br>
+
+    <div class="new-donation">
+      寄付の説明
+      <span class="indispensable">必須</span>
+    </div><br>
+    <div class="AccountPage__form">
+     <%= f.text_area :description, class:"donation-text", id:"donation-info", placeholder:"寄付の説明（必須 1,000文字まで）例）ボランティア活動で清掃をしたいと考えております。清掃で必要な道具を準備したいです。ぜひ寄付をお願いします。" ,rows:"7" ,maxlength:"1000" %>
+    </div><br>
+    <%# /商品名と商品説明 %>
+
+    <%# 販売価格 %>
+    <div class="new-donation">
+      寄付価格設定
+      <span>(¥1〜9,999,999)</span>
+    </div>
+    <div class="new-donation">
+      価格
+      <span class="indispensable">必須</span>
+    </div><br>
+    <div class="AccountPage__form">
+      <span class="sell-yen">¥</span>
+      <%= f.text_field :price, class:"donation-text", id:"donation-price", placeholder:"半角数字で入力" %>
+    </div><br>
+    <%# /販売価格 %>
+
+    <%# 下部ボタン %>
+    <div class="new-sell-btn">
+      <div class="sell-btn"><br>
+        <%= f.submit "応募する", class:"devise-btn" %>
+      </div>
+    </div>
+    <div class="new2-sell-btn">
+      <div class="sell-btn"><br>
+        <%=link_to '寄付一覧へ戻る', root_path, class: "btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
