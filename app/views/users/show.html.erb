@@ -43,13 +43,19 @@
         </div>
         <br>
       </div>
-      <%= f.submit "更新する" %>
+      <%= f.submit "更新する", class:"devise-btn" %>
     <% end %>
-    <br>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <br>
-    <%= link_to "寄付一覧へ戻る", root_path %>
   </div>
   <%# /ユーザー情報の表示 %>
-  
+
+  <%# ボタン表示 %>
+  <br>
+  <div class="Outpage__form">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+  </div>
+  <br>
+  <div class="Rootpage__form">
+    <%= link_to "寄付一覧へ戻る", root_path, class: 'btn' %>
+  </div>
+  <%# /ボタン表示 %>
 </div>
