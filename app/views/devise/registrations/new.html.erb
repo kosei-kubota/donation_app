@@ -5,7 +5,8 @@
   </div>
   <div class="AccountPage__form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= render 'devise/shared/error_messages', model: f.object %>
+      <%# <%= devise_error_messages! %>
       <div class="FormField">
         <div class="FormField__label--normal">
           <%= f.label :nickname %>

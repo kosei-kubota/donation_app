@@ -241,11 +241,7 @@
   background-color: cyan;
 } */
 
-.grid-6 {
-  color: orange;
-  display: flex;
-  justify-content: center;
-}
+
 /* //ヘッダー部分 */
 
 /* フッター部分 */
@@ -313,3 +309,42 @@
   text-decoration: none;
 }
 /* //マイページ */
+
+/* エラーメッセージ */
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
+/* //エラーメッセージ */
+
+/* 新規・ログインページボタン */
+.user {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-btn {
+  width: 36%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+/* //新規・ログインページボタン */

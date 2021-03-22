@@ -24,18 +24,24 @@
     <% if current_user.id != donation.user_id  %>
       <div class="donation-in">
         <%= link_to '寄付をする', order_donation_path(donation.id), method: :post, class: 'donations-btn' %>
-      </div>
-    <% end %>
-    <% if donation.order != nil && current_user.id != donation.user_id %> 
-      <br>
-      <div class='donation-out'>
-        <b>寄付されました。ありがとうございます！！</b>
-      </div>
-    <% end %>
-    <% if current_user.id == donation.user_id && donation.order.present? %>
-      <div class='donation-out'>
+      </div><br>
+    <% end %><br>
+
+    <% if donation.order.present? %>
+      <% if current_user.id != donation.user_id && current_user.id == donation.order.user_id %>
+        <br>
+        <div class='donation-out'>
+          <b>寄付が完了しました。ありがとうございます！！</b>
+        </div>
+      <% elsif current_user.id == donation.user_id && donation.order != nil %>
+        <div class='donation-out'>
         <b>寄付金をいただきました！！</b>
       </div>
+      <% else %>
+        <div class='donation-out'>
+          <b>ぜひ寄付を！！</b>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

@@ -1,8 +1,9 @@
 <div class="donation-sell-main">
   <h2 class="AccountPage__title">寄付の情報を入力</h2>
+  <div class="new-donation-list">
   <%= form_with(model: @donation, local: true) do |f| %>
 
-    <%# <%= render 'devise/shared/error_messages', model: f.object %>
+    <%= render 'devise/shared/error_messages', model: f.object %>
 
     <%# 商品名と商品説明 %>
     <div class="new-donation">
@@ -49,4 +50,5 @@
       </div>
     </div>
   <% end %>
+  </div>
 </div>

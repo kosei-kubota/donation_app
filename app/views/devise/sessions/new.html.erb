@@ -5,7 +5,10 @@
   </div><br>
   <div class="AccountPage__form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
       <div class="FormField">
         <div class="FormField__label--normal">
           <%= f.label :email %>
