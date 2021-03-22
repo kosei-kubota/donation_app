@@ -40,14 +40,6 @@ ActiveRecord::Schema.define(version: 2021_03_16_050531) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "prices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "price", null: false
-    t.bigint "donation_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["donation_id"], name: "index_prices_on_donation_id"
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -65,5 +57,4 @@ ActiveRecord::Schema.define(version: 2021_03_16_050531) do
   add_foreign_key "donations", "users"
   add_foreign_key "orders", "donations"
   add_foreign_key "orders", "users"
-  add_foreign_key "prices", "donations"
 end
