@@ -11,7 +11,7 @@ Donation_app
 
 ## URL
 
-Markdown:[Donation_app](http://donation-app-34523.herokuapp.com/"Donation Login")
+Markdown:[Donation_app](http://donation-app-34523.herokuapp.com/)
 
 ## テスト用アカウント
 
