@@ -66,7 +66,7 @@ Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code / PAY.JP
 
 ## ER図
 
-Markdown:![Donation_app](donation.png)
+Markdown:![Donation_app](https://user-images.githubusercontent.com/78420140/112100349-5a625780-8be8-11eb-9db3-8292cbf9a830.png"ER図画像")
 
 ## users テーブル
 
