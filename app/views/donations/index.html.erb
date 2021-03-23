@@ -1,0 +1,73 @@
+<%= render "devise/shared/header" %>
+<div class="pict">
+<%= image_tag "IMG_1059.PNG", class:"list-pict" %>
+</div>
+<div class="new-donation-btn">
+<%= link_to '寄付投稿へ', new_donation_path(current_user), class: 'donation-btn' %>
+</div>
+<%# 寄付一覧 %>
+<div class='content'>
+  <h2 class='title'>寄付投稿一覧</h2>
+  <% @donations.each do |donation| %>
+    <div class='donation-list'>
+      <p class="donation-name" >寄付名：<%= donation.name %></p>
+    </div>
+    <div>
+      <span class="user-name">投稿者：<%= donation.user.nickname %></span>
+    </div>
+    <div class='donation-list'>
+      <p class="donation-description">内容：<%= donation.description %></p>
+    </div>
+    <div class='donation-list'>
+      <p class="donation-price">寄付金：<%= donation.price %>円</p>
+    </div>
+    <% if current_user.id != donation.user_id  %>
+      <div class="donation-in">
+        <%= link_to '寄付をする', order_donation_path(donation.id), method: :post, class: 'donations-btn' %>
+      </div><br>
+    <% end %><br>
+
+    <% if donation.order.present? %>
+      <% if current_user.id != donation.user_id && current_user.id == donation.order.user_id %>
+        <br>
+        <div class='donation-out'>
+          <b>寄付が完了しました。ありがとうございます！！</b>
+        </div>
+      <% elsif current_user.id == donation.user_id && donation.order != nil %>
+        <div class='donation-out'>
+        <b>寄付金をいただきました！！</b>
+      </div>
+      <% else %>
+        <div class='donation-out'>
+          <b>ぜひ寄付を！！</b>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% if @donations.length == 0 %>
+    <div class='donation-list'>
+      <p class="donation-name" >寄付名：寄付よろしく</p>
+    </div>
+    <div>
+      <span class="user-name">投稿者：あああ</span>
+    </div>
+    <div class='donation-list'>
+      <p class="donation-description">内容：よろしくお願いします</p>
+    </div>
+    <div class='donation-list'>
+      <p class="donation-price">寄付金：99999999円</p>
+    </div>
+  <% end %>
+</div>
+<%# /寄付一覧 %>
+
+<%# マイページ %>
+<% if user_signed_in? %>
+  <%= link_to(user_path(current_user), class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>マイページ</span>
+  <%= image_tag 'IMG_1055.JPG' , class: "purchase-btn-icon" %>
+  <% end %>
+<% end %>
+<%# /マイページ %>
+<br>
+<%= render "devise/shared/footer" %>

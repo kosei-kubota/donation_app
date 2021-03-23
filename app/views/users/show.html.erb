@@ -1,0 +1,61 @@
+<div class="AccountPage">
+  <div class="AccountPage__title">
+    <h1>マイページ</h1>
+  </div><br>
+
+  <%# カード情報の表示 %>
+  <div class="Card__title">
+    <h2>カード情報</h2>
+  </div>
+  <div class="Card_info">
+    【カード番号】
+    <br>
+    <%= "**** **** **** " + @card[:last4] %>
+    <br>
+    【有効期限】
+    <br>
+    <%= @card[:exp_month] %>
+    /
+    <%= @card[:exp_year] %>
+  </div>
+  <%# /カード情報の表示 %>
+
+  <%# ユーザー情報の表示 %>
+  <div class="Account__info">
+    <h2>ユーザー情報</h2>
+  </div>
+  <div class="AccountPage__form">
+    <%= form_for(current_user) do |f| %>
+      <div class="FormField">
+        <div class="FormField__name">
+          <%= f.label :nickname %>
+        </div>
+        <div class="FormField__name">
+          <%= f.text_field :nickname %>
+        </div>
+      </div>
+      <div class="FormField">
+        <div class="FormField__email">
+          <%= f.label :email %>
+        </div>
+        <div class="FormField__email">
+          <%= f.email_field :email %>
+        </div>
+        <br>
+      </div>
+      <%= f.submit "更新する", class:"devise-btn" %>
+    <% end %>
+  </div>
+  <%# /ユーザー情報の表示 %>
+
+  <%# ボタン表示 %>
+  <br>
+  <div class="Outpage__form">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+  </div>
+  <br>
+  <div class="Rootpage__form">
+    <%= link_to "寄付一覧へ戻る", root_path, class: 'btn' %>
+  </div>
+  <%# /ボタン表示 %>
+</div>

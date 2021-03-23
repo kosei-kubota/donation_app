@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'donations#index'
+  resources :users, only: [:show, :update]
+  resources :cards, only: [:new, :create]
+  resources :donations, only: [:order, :new, :create] do
+    post 'order', on: :member
+  end
 end
