@@ -1,13 +1,18 @@
 <div class="AccountPage">
   <div class="AccountPage__title">
     <h1>ログインページ</h1>
-    <%= render "devise/shared/links" %>
+    
   </div><br>
   <div class="AccountPage__form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
       <div class="FormField">
         <div class="FormField__label--normal">
           <%= f.label :email %>
+          <span class="indispensable">必須</span>
         </div>
         <div class="FormField__input--normal">
           <%= f.email_field :email, autofocus: true %>
@@ -16,16 +21,19 @@
           <div class="FormField__label--normal">
             <%= f.label :password %>
             （英数字で８文字）
+            <span class="indispensable">必須</span>
           </div>
           <div class="FormField__input--normal">
             <%= f.password_field :password, autocomplete: "off" %>
           </div>
         </div><br>
         <div class="actions">
-          <%= f.submit "ログイン", class: 'Button UserButton' %>
+          <%= f.submit "ログイン", class:"devise-btn" %>
         </div>
       </div>
     <% end %>
   </div>
+  <br>
+  <%= render "devise/shared/links" %>
 </div>
 
