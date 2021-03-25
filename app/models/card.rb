@@ -1,5 +1,13 @@
 class Card < ApplicationRecord
-  validates :card_token, :customer_token, presence: true
+
+  with_options presence: true do
+    validates :user_id
+    validates :card_token
+    validates :customer_token
+  end
+
+
+
 
   belongs_to :user
 end

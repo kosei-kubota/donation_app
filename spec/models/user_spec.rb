@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
+
+
+
   
 
   describe '#create' do
@@ -88,5 +91,6 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
 
 end
